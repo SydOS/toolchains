@@ -7,6 +7,11 @@ isl*
 mpc*
 mpfr*
 
+# Mac OS X stuff
+.DS_Store
+*/.DS_Store
+**/.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
