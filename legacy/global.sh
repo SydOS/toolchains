@@ -1,8 +1,8 @@
 export GMP_VERSION=6.1.2
 export MPFR_VERSION=4.0.1
 export MPC_VERSION=1.1.0
-# ISL 0.20 is incompatible with GCC 8.2.0, but will be fixed with GCC 8.3.0
-export ISL_VERSION=0.19
+# ISL 0.20 is incompatible with GCC 8.2.0, ISL 0.19 is incompatible with CLooG 0.18.4
+export ISL_VERSION=0.18
 export BINUTILS_VERSION=2.31.1
 export GCC_VERSION=8.2.0
 export GDB_VERSION=8.1.1
