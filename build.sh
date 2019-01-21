@@ -74,28 +74,13 @@ make -j4
 sudo make install
 cd ..
 
-exit
-
-#-------------------------------------------------------------------------------
-
-tar -xf isl-$ISL_VER.tar.gz
-tar -xf cloog-$CLOOG_VER.tar.gz
-tar -xf gmp-$GMP_VER.tar.xz
-
 wget $GNU_BASE/gcc/gcc-$GCC_VER/gcc-$GCC_VER.tar.gz
 tar -xf gcc-$GCC_VER.tar.gz
-
-mv isl-$ISL_VER gcc-$GCC_VER/isl
-mv cloog-$CLOOG_VER gcc-$GCC_VER/cloog
-mv gmp-$GMP_VER gcc-$GCC_VER/gmp
-mv mpfr-$MPFR_VER gcc-$GCC_VER/mpfr
-mv mpc-$MPC_VER gcc-$GCC_VER/mpc
-
 mkdir build-gcc
 cd build-gcc
-../gcc-$GCC_VER/configure --disable-nls --enable-languages=c,c++ --without-headers --target=$TARGET
-make all-gcc
-make all-target-libgcc
+../gcc-$GCC_VER/configure --with-isl=$TOOLBASEPATH --with-cloog=$TOOLBASEPATH --with-gmp=$TOOLBASEPATH --with-mpfr=$TOOLBASEPATH --with-mpc=$TOOLBASEPATH --prefix=$TOOLPATH --disable-nls --enable-languages=c,c++ --without-headers --target=$TARGET
+make all-gcc -j4
+make all-target-libgcc -j4
 sudo make install-gcc
 sudo make install-target-libgcc
 cd ..
