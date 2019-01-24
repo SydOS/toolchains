@@ -10,11 +10,11 @@ export ISL_BASE=http://isl.gforge.inria.fr
 export CLOOG_BASE=https://github.com/periscop/cloog/releases/download
 export GNU_BASE=https://ftp.gnu.org/gnu
 
-export TOOLPATH=/opt/SydOS-toolchains/
+export TOOLPATH=/opt/SydOS-toolchains
 export PATH=$TOOLPATH:$PATH
 
 set -e
-rm -rf build-* isl* cloog* gmp* mpfr* mpc* binutils* gcc* syods-toolchain-*.tar.gz
+rm -rf build-* isl* cloog* gmp* mpfr* mpc* binutils* gcc* sydos-toolchain-*.tar.gz
 sudo rm -rf $TOOLPATH $TOOLPATH/base
 
 #-------------------------------------------------------------------------------
