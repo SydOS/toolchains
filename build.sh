@@ -88,7 +88,7 @@ function gcc_binutils {
 	tar -xf gcc-$GCC_VER.tar.gz
 	mkdir build-gcc
 	cd build-gcc
-	../gcc-$GCC_VER/configure --with-isl=$TOOLBASEPATH --with-cloog=$TOOLBASEPATH --with-gmp=$TOOLBASEPATH --with-mpfr=$TOOLBASEPATH --with-mpc=$TOOLBASEPATH --prefix=$TOOLPATH --disable-nls --enable-languages=c,c++ --without-headers --target=$1
+	../gcc-$GCC_VER/configure --with-isl=$TOOLBASEPATH --with-cloog=$TOOLBASEPATH --with-gmp=$TOOLBASEPATH --with-mpfr=$TOOLBASEPATH --with-mpc=$TOOLBASEPATH --prefix=$TOOLPATH --disable-nls --enable-languages=c --without-headers --target=$1
 	make all-gcc -j4
 	make all-target-libgcc -j4
 	sudo make install-gcc
