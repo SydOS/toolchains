@@ -7,6 +7,7 @@ isl*
 mpc*
 mpfr*
 build-*
+*.tar.gz
 
 # Mac OS X stuff
 .DS_Store
