@@ -12,4 +12,7 @@ import build_gdb_i686
 import build_gdb_i786
 import build_gdb_x86_64
 
+# We can only have one GRUB at a time, sorry!
+import build_grub_i686
+
 import build_nasm
