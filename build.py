@@ -16,13 +16,14 @@
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACan I execute CT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
 import os
+import multiprocessing
 
-installpath = "$HOME/SydOS.framework/"
+installpath = "$HOME/SydOS-Tools/"
 
 def build(url="", project="", configargs="", ignoresrchceck=False, custommake=""):
 	if os.path.isdir(project) and ignoresrchceck == False:
@@ -33,6 +34,7 @@ def build(url="", project="", configargs="", ignoresrchceck=False, custommake=""
 	os.system("tar -xf " + project + "*.tar.* --strip-components=1 -C " + project)
 	os.system("mkdir " + project + "-build")
 	if custommake == "":
-		os.system("cd " + project + "-build && ../" + project + "/configure --prefix=" + installpath + " " + configargs + " && make && make install")
+		os.system("cd " + project + "-build && ../" + project + "/configure --prefix=" + installpath + " " + configargs + " && make -j{} && make install"
+			.format(multiprocessing.cpu_count()))
 	else:
 		os.system("cd " + project + "-build && ../" + project + "/configure --prefix=" + installpath + " " + configargs + " && " + custommake)

@@ -1,3 +1,3 @@
 ```
-sudo apt install m4
+sudo apt install m4 texinfo
 ```
