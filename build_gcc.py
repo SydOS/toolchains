@@ -24,7 +24,7 @@ import build
 
 import build_mpc
 
-ver = "8.2.0"
+ver = "9.3.0"
 url =  "https://ftp.gnu.org/gnu/gcc/gcc-" + ver + "/gcc-" + ver + ".tar.gz"
 
 def do_build(target=""):

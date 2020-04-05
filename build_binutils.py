@@ -22,7 +22,7 @@
 
 import build
 
-ver = "2.32"
+ver = "2.34"
 url =  "https://ftp.gnu.org/gnu/binutils/binutils-" + ver + ".tar.gz"
 
 def do_build(target=""):

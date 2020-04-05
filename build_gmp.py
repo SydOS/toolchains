@@ -22,7 +22,7 @@
 
 import build
 
-ver = "6.1.2"
+ver = "6.2.0"
 url =  "https://ftp.gnu.org/gnu/gmp/gmp-" + ver + ".tar.bz2"
 
 build.build(url=url, project="gmp")
