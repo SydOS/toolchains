@@ -22,7 +22,7 @@
 
 import build
 
-ver = "2.04"
+ver = "2.02"
 url =  "https://ftp.gnu.org/gnu/grub/grub-" + ver + ".tar.gz"
 
 def do_build(target=""):
